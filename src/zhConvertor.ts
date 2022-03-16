@@ -6,7 +6,7 @@ import table1 from './data/table1';
 import table2 from './data/table2';
 
 export enum ConvertType {
-  empty = 0,
+  dont = 0,
   s2t = 1,
   t2s = 2,
 }
@@ -37,7 +37,7 @@ export default class zhConvertor {
         }
       }
     });
-    
+
     for (let i = 0; i < result.length; i++) {
       if (!result[i]) {
         result[i] = tmptext.charAt(i);
@@ -66,9 +66,9 @@ export default class zhConvertor {
    * @param convertType 0: don't convert, 1: C->T, 2: T->C
    * @returns
    */
-  public static zhConv = (text: string, convertType: ConvertType): string => {
+  public static convert = (text: string, convertType: ConvertType): string => {
     switch (convertType) {
-      case ConvertType.empty:
+      case ConvertType.dont:
         return text;
       case ConvertType.s2t:
         return this.s2t(text);
