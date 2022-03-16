@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "CommonJS",
+		"allowJs": true,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"declaration": true,
+		"strict": true,
+		"sourceMap": true
+	},
+	"include": ["src/*", "src/data/table.ts"],
+	"exclude": ["node_modules", "**/*.spec.ts"],
+	"compileOnSave": true
+}

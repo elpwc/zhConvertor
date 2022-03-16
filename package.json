@@ -1,0 +1,30 @@
+{
+  "name": "zhconvertor",
+  "version": "1.0.0",
+  "description": "Convert Chinese Simp to Trad or Trad to Simp",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "tsc & node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elpwc/zhConvertor.git"
+  },
+  "keywords": [
+    "chinese", "simplified chinese", "traditional chinese", "chinese convertor", "language"
+  ],
+  "author": "elpwc@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elpwc/zhConvertor/issues"
+  },
+  "homepage": "https://github.com/elpwc/zhConvertor#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.7.0"
+  }
+}
