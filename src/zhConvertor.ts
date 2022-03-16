@@ -18,31 +18,25 @@ export default class zhConvertor {
    * @return
    */
   public static s2t = (text: string): string => {
+    if (!text || text.length === 0) return '';
+
     let tmptext: string = text;
     const result: string[] = Array(text.length);
 
-    table2.forEach((couple: [string, string]) => {
-      for (let i = 0; i < tmptext.length - 1; i++) {
-        if (tmptext.substring(i, i + 2) === couple[1] && !result?.[i]) {
-          result[i] = couple[0].charAt(0);
-          result[i + 1] = couple[0].charAt(1);
-        }
-      }
-    });
+    if (text.length > 1)
+      table2.forEach((couple: [string, string]) => {
+        for (let i = 0; i < tmptext.length - 1; i++)
+          if (tmptext.substring(i, i + 2) === couple[1] && !result?.[i]) {
+            result[i] = couple[0].charAt(0);
+            result[i + 1] = couple[0].charAt(1);
+          }
+      });
 
     table1.forEach((couple: [string, string]) => {
-      for (let i = 0; i < tmptext.length; i++) {
-        if (tmptext.substring(i, i + 1) === couple[1] && !result?.[i]) {
-          result[i] = couple[0].charAt(0);
-        }
-      }
+      for (let i = 0; i < tmptext.length; i++) if (tmptext.substring(i, i + 1) === couple[1] && !result?.[i]) result[i] = couple[0].charAt(0);
     });
 
-    for (let i = 0; i < result.length; i++) {
-      if (!result[i]) {
-        result[i] = tmptext.charAt(i);
-      }
-    }
+    for (let i = 0; i < result.length; i++) if (!result[i]) result[i] = tmptext.charAt(i);
 
     return result.join('');
   };
@@ -53,6 +47,8 @@ export default class zhConvertor {
    * @returns
    */
   public static t2s = (text: string): string => {
+    if (!text || text.length === 0) return '';
+
     let resText = text;
     table1.forEach(charSet => {
       resText = resText.replace(new RegExp(charSet[0], 'g'), charSet[1]);
@@ -63,7 +59,7 @@ export default class zhConvertor {
   /**
    * Convert TC to SC or SC to TC
    * @param text
-   * @param convertType 0: don't convert, 1: C->T, 2: T->C
+   * @param convertType 0: don't convert, 1: S->T, 2: T->S
    * @returns
    */
   public static convert = (text: string, convertType: ConvertType): string => {

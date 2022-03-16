@@ -1,6 +1,9 @@
 import zhConvertor from '../index';
 
 test('Convert Simp.Ch. to Trad.Ch.: ', () => {
+  expect(zhConvertor.s2t('')).toBe('');
+  expect(zhConvertor.s2t('兽')).toBe('獸');
+
   expect(zhConvertor.s2t('野兽')).toBe('野獸');
   expect(zhConvertor.s2t('测试')).toBe('測試');
   expect(zhConvertor.s2t('测试测试测试')).toBe('測試測試測試');
@@ -20,6 +23,9 @@ test('Convert Simp.Ch. to Trad.Ch.: ', () => {
 });
 
 test('Convert Trad.Ch. to Simp.Ch.: ', () => {
+  expect(zhConvertor.t2s('')).toBe('');
+  expect(zhConvertor.t2s('獸')).toBe('兽');
+  
   expect(zhConvertor.t2s('前輩')).toBe('前辈');
   expect(zhConvertor.t2s('測試')).toBe('测试');
   expect(zhConvertor.t2s('測試測試測試')).toBe('测试测试测试');
