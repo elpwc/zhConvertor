@@ -1,6 +1,6 @@
 {
   "name": "zhconvertor",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Convert Chinese Simp to Trad or Trad to Simp",
   "main": "dist/index.js",
   "scripts": {
