@@ -3,6 +3,7 @@
   "version": "2.2.4",
   "description": "Convert Chinese Simp to Trad or Trad to Simp",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc",
